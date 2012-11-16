@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Public Files</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <ul>
+        <% Dir.glob(File.join(settings.public_folder, "*")) do |path| %>
+            <% file = path.gsub(/.*\//, "") %>
+            <li><a href="/<%= file %>"><%= file %></a></li>
+        <% end %>
+        </ul>
+    </body>
+</html>
